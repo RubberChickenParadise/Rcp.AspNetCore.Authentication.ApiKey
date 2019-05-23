@@ -174,11 +174,9 @@ following into consideration to harden the service:
 
 ## Final notes
 
-Using api keys can possibly cause issues since they are validated on every request.  If you run into this you can use
-some sort of caching of successful keys.  Check out [Rcp.Caching.CachingManager] (https://github.com/RubberChickenParadise/Rcp.Caching.CachingManager) for an option that has some optimizations
- around multiple cache misses at the same time in a multithreaded application (IE: a web app).
+Using api keys can possibly cause issues since they are validated on every request.  If the validation hits a backing store (like a database) this may be a place you would want to add some caching.  [LazyCache](https://github.com/alastairtree/LazyCache) is a great one for a simple local cache.
 
-If you dont feel like writing your own exponential lockout for IP addresses, use mine [Rcp.Security.BackOff](https://github.com/RubberChickenParadise/Rcp.Security.BackOff)
+If you dont feel like writing your own exponential lockout for IP addresses, use mine [Rcp.Security.BackOff](https://github.com/RubberChickenParadise/Rcp.Security.BackOff).
 
 ## Framework versions supported
 
