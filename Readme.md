@@ -176,8 +176,6 @@ following into consideration to harden the service:
 
 Using api keys can possibly cause issues since they are validated on every request.  If the validation hits a backing store (like a database) this may be a place you would want to add some caching.  [LazyCache](https://github.com/alastairtree/LazyCache) is a great one for a simple local cache.
 
-If you dont feel like writing your own exponential lockout for IP addresses, use mine [Rcp.Security.BackOff](https://github.com/RubberChickenParadise/Rcp.Security.BackOff).
-
 ## Framework versions supported
 
 Currently this only supports .net Standard 2.0 an on.
